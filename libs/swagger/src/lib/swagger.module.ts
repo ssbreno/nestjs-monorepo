@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
+import { SwaggerService } from './swagger.service';
 
 @Module({
   controllers: [],
-  providers: [],
-  exports: [],
+  providers: [SwaggerService],
+  exports: [SwaggerService],
 })
 export class SwaggerModule {}

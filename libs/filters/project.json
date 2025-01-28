@@ -1,24 +1,24 @@
 {
-  "name": "swagger",
+  "name": "filters",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/swagger/src",
+  "sourceRoot": "libs/filters/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nrwl/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/swagger",
-        "tsConfig": "libs/swagger/tsconfig.lib.json",
-        "packageJson": "libs/swagger/package.json",
-        "main": "libs/swagger/src/index.ts",
-        "assets": ["libs/swagger/*.md"]
+        "outputPath": "dist/libs/filters",
+        "tsConfig": "libs/filters/tsconfig.lib.json",
+        "packageJson": "libs/filters/package.json",
+        "main": "libs/filters/src/index.ts",
+        "assets": ["libs/filters/*.md"]
       }
     },
     "publish": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "node tools/scripts/publish.mjs swagger {args.ver} {args.tag}"
+        "command": "node tools/scripts/publish.mjs filters {args.ver} {args.tag}"
       },
       "dependsOn": ["build"]
     },
@@ -26,14 +26,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/swagger/**/*.ts"]
+        "lintFilePatterns": ["libs/filters/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/swagger/jest.config.ts",
+        "jestConfig": "libs/filters/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
